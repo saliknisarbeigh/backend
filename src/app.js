@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require("express");
 const app = express();
 const connectDb = require("./config/database");
@@ -10,6 +11,8 @@ const allowedOrigins = [
   'http://localhost:5173'
 ];
 
+
+// Rest of your code...
 app.use(
   cors({
     origin: function (origin, callback) {
