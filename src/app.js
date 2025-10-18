@@ -7,12 +7,12 @@ const cors = require("cors");
 
 // CORS configuration for frontend
 const allowedOrigins = [
-  'https://blinkit-clone-explore.vercel.app',
+  'https://inspiro-salik.vercel.app',
   'http://localhost:5173'
 ];
 
 
-// Rest of your code...
+
 app.use(
   cors({
     origin: function (origin, callback) {
@@ -55,9 +55,7 @@ app.get("/", (req, res) => {
 });
 
 // Health check route
-app.get("/health", (req, res) => {
-  res.json({ status: "OK", timestamp: new Date().toISOString() });
-});
+
 
 // Error handling middleware
 app.use((err, req, res, next) => {
