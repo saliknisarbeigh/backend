@@ -9,6 +9,9 @@ const cors = require("cors");
 const allowedOrigins = [
   "https://inspiro-salik.vercel.app",
   "http://localhost:3000",
+  "https://localhost:3000",
+  "localhost:3000",
+  "http://localhost:5173",
 ];
 
 app.use(
