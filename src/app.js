@@ -1,4 +1,4 @@
-require('dotenv').config();
+require("dotenv").config();
 const express = require("express");
 const app = express();
 const connectDb = require("./config/database");
@@ -7,27 +7,26 @@ const cors = require("cors");
 
 // CORS configuration for frontend
 const allowedOrigins = [
-  'https://inspiro-salik.vercel.app',
-  'http://localhost:5173'
+  "https://inspiro-salik.vercel.app",
+  "http://localhost:3000",
 ];
-
-
 
 app.use(
   cors({
     origin: function (origin, callback) {
       // Allow requests with no origin (like mobile apps or curl requests)
       if (!origin) return callback(null, true);
-      
+
       if (allowedOrigins.indexOf(origin) === -1) {
-        const msg = 'The CORS policy for this site does not allow access from the specified Origin.';
+        const msg =
+          "The CORS policy for this site does not allow access from the specified Origin.";
         return callback(new Error(msg), false);
       }
       return callback(null, true);
     },
     credentials: true,
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization']
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
 
@@ -55,7 +54,6 @@ app.get("/", (req, res) => {
 });
 
 // Health check route
-
 
 // Error handling middleware
 app.use((err, req, res, next) => {
